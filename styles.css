@@ -6,16 +6,30 @@
 }
 
 body{
-	font-family: sans-serif;
+	font-family: 'Roboto', sans-serif
 	min-height: 100vh;
 	color: #555;
-	background-color: coral;
+	background-color: #5eb040;
+  background-image: url('img/fondo.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 form, .content{
 	max-width: 400px;
 	min-height: 500px;
 	margin: 100px auto;
+	border:  thin solid #e4e4e4;
+	padding: 40px 30px;
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+	background-color: white;
+}
+
+.content-datos{
+	max-width: 1400px;
+	min-height: 500px;
+	margin: 20px auto;
 	border:  thin solid #e4e4e4;
 	padding: 40px 30px;
 	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
@@ -31,7 +45,7 @@ form h4{
 	font-weight: normal;
 }
 form h4 span{
-	color:  coral;
+	color:  #5eb040;
 	font-weight: bold;
 	text-decoration: underline;
 }
@@ -51,6 +65,19 @@ form input, form textarea{
 	margin-bottom: 30px;
 }
 
+input.a {
+  width: auto;
+  margin-bottom: 0px;
+  display: inline;
+	padding: 1px;
+	font-size: 16px;
+}
+
+input.b {
+  margin-bottom: 8px;
+}
+
+
 form select{
 	display: block;
 	width:  100%;
@@ -65,7 +92,7 @@ form select{
 form input:focus
 {
 	outline: none;
-	border: thin solid coral;
+	border: thin solid #5eb040;
 }
 
 form textarea{
@@ -119,10 +146,41 @@ form button:active{
 	 padding-bottom: 30px;
  }
 
-.content main{
-	margin-top: 50px;
+
+.header {
+  background-color: #007bff; /* Color de fondo */
+  color: #fff; /* Color del texto */
+  padding: 0; /* Relleno arriba y abajo */
 }
 
-.content main h3{
+.container {
+  margin: 0; /* Centrar horizontalmente */
+  display: flex; /* Muestra como un flex container */
+  justify-content: space-between; /* Alineación de elementos en el eje horizontal */
+  align-items: center /* Alineación de elementos en el eje vertical */
+}
 
+
+.menu ul {
+  list-style-type: none; /* Elimina los marcadores de lista */
+  margin: 0; /* Margen */
+  padding: 0; /* Relleno */
+}
+
+.menu ul li {
+  display: inline-block; /* Muestra como elementos en línea */
+  margin-left: 20px; /* Margen izquierdo entre elementos */
+}
+
+.menu ul li a {
+  color: #fff; /* Color del enlace */
+  text-decoration: none; /* Decoración del texto del enlace */
+}
+
+.menu ul li a:hover {
+  text-decoration: underline; /* Subrayado del enlace al pasar el cursor */
+}
+
+img {
+       max-width: 100%;
 }
