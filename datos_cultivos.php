@@ -80,6 +80,16 @@
       $url = "http://3.18.181.47:8000/posts/803238";
       $json = file_get_contents($url);
       $obj = json_decode($json);
+      foreach($obj as $o){
+        $fecha_objeto = new DateTime($o->created_at);
+
+        // Restar 3 horas
+        $fecha_objeto->sub(new DateInterval('PT3H'));
+
+        // Formatear la nueva fecha en el mismo formato
+        $fecha_formateada = $fecha_objeto->format("Y-m-d\TH:i:s.u\Z");
+        $o->created_at = $fecha_formateada;
+      }
  ?>
 
 <!DOCTYPE html>
@@ -107,8 +117,6 @@
       </a>
       <ul class="right hide-on-med-and-down">
         <li><a href="datos_cultivos.php">Inicio</a></li>
-        <li><a href="#">Acerca de</a></li>
-        <li><a href="#">Servicios</a></li>
         <li><a href="contacto.php">Contacto</a></li>
       </ul>
     </div>
@@ -200,7 +208,13 @@
         responsive: true,
         maintainAspectRatio: false,
         scales: {
-
+          y: {
+              max: 100, // Establecer el límite superior del eje y en 1100
+              min: 0, // Puedes establecer un límite inferior si lo deseas
+              ticks: {
+                  stepSize: 50 // Opcional: Puedes establecer el tamaño del paso de los ticks del eje y
+              }
+          }
         }
       }
     });
@@ -237,7 +251,13 @@
         responsive: true,
         maintainAspectRatio: false,
         scales: {
-
+          y: {
+              max: 100, // Establecer el límite superior del eje y en 1100
+              min: 0, // Puedes establecer un límite inferior si lo deseas
+              ticks: {
+                  stepSize: 50 // Opcional: Puedes establecer el tamaño del paso de los ticks del eje y
+              }
+          }
         }
       }
     });
@@ -348,7 +368,13 @@
         responsive: true,
         maintainAspectRatio: false,
         scales: {
-       
+          y: {
+              max: 100, // Establecer el límite superior del eje y en 1100
+              min: 0, // Puedes establecer un límite inferior si lo deseas
+              ticks: {
+                  stepSize: 50 // Opcional: Puedes establecer el tamaño del paso de los ticks del eje y
+              }
+          }
         }
       }
     });
@@ -385,7 +411,13 @@
         responsive: true,
         maintainAspectRatio: false,
         scales: {
-
+          y: {
+              max: 100, // Establecer el límite superior del eje y en 1100
+              min: 0, // Puedes establecer un límite inferior si lo deseas
+              ticks: {
+                  stepSize: 50 // Opcional: Puedes establecer el tamaño del paso de los ticks del eje y
+              }
+          }
         }
       }
     });
@@ -422,7 +454,13 @@
         responsive: true,
         maintainAspectRatio: false,
         scales: {
-
+          y: {
+              max: 1100, // Establecer el límite superior del eje y en 1100
+              min: 0, // Puedes establecer un límite inferior si lo deseas
+              ticks: {
+                  stepSize: 500 // Opcional: Puedes establecer el tamaño del paso de los ticks del eje y
+              }
+          }
         }
       }
     });
@@ -459,7 +497,13 @@
         responsive: true,
         maintainAspectRatio: false,
         scales: {
-
+                  y: {
+                      max: 1100, // Establecer el límite superior del eje y en 1100
+                      min: 0, // Puedes establecer un límite inferior si lo deseas
+                      ticks: {
+                          stepSize: 500 // Opcional: Puedes establecer el tamaño del paso de los ticks del eje y
+                      }
+                  }
         }
       }
     });

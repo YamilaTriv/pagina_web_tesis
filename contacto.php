@@ -29,8 +29,6 @@
       </a>
       <ul class="right hide-on-med-and-down">
         <li><a href="datos_cultivos.php">Inicio</a></li>
-        <li><a href="#">Acerca de</a></li>
-        <li><a href="#">Servicios</a></li>
         <li><a href="contacto.php">Contacto</a></li>
       </ul>
     </div>

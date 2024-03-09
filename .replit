@@ -1,2 +1,6 @@
 run = "php -S 0.0.0.0:8000 -t ."
 
+[[ports]]
+localPort = 8000
+externalPort = 80
+
