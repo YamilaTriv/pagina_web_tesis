@@ -73,7 +73,7 @@
     
     <div class="contact">
       <div class="avatar">
-        <img src="" alt="Avatar">
+        <img src="/img/yamile1.png" alt="Avatar">
       </div>
       <div class="details">
         <h2>Yamile Lara </h2>
