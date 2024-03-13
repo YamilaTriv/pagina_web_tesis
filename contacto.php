@@ -46,7 +46,6 @@
         <h2>Mariano Arbiza</h2>
         <p>Estudiante Ing.en Mecatrónica</p>
         <p>Email: mariano.arbiza@estudiantes.utec.edu.uy</p>
-        <p>Phone: a definir </p>
       </div>
     </div>
 
@@ -58,7 +57,6 @@
         <h2>Yamila Triviño</h2>
         <p>Estudiante Ing.en Mecatrónica</p>
         <p>Email: yamila.trivino@estudiantes.utec.edu.uy</p>
-        <p>Phone: a definir</p>
       </div>
     </div>
 
@@ -69,8 +67,18 @@
       <div class="details">
         <h2>Diego Quiroga</h2>
         <p>Tutor</p>
-        <p>Email: michael@example.com</p>
-        <p>Phone: +1 555 123 4567</p>
+        <p>Email: diego.quiroga.p@utec.edu.uy</p>
+      </div>
+    </div>
+    
+    <div class="contact">
+      <div class="avatar">
+        <img src="" alt="Avatar">
+      </div>
+      <div class="details">
+        <h2>Yamile Lara </h2>
+        <p>Co-Tutora</p>
+          <p>Email: yamile.lara@utec.edu.uy</p>
       </div>
     </div>
   </div>

@@ -27,44 +27,29 @@
         $humedad1 = bindec(substr($bin1, 0, 7)); // 7 cifras altas
 
         $hexHumedad2 = substr($hex_string, 7, 3);
-        //echo "<br></br>" . $hexHumedad2 . "<br></br>";
         $bin2 = base_convert($hexHumedad2, 16, 2);
         $bin2 = str_pad($bin2, 12, '0', STR_PAD_LEFT);
-        //echo "<br></br>" . $bin2 . "<br></br>";
-        //echo "<br></br>" . substr($bin2, 3, 7) . "<br></br>";
         $humedad2 = bindec(substr($bin2, 3, 7)); // 7 cifras altas
 
         $hexHumedadSuelo1 = substr($hex_string, 9, 3);
-        //echo "<br></br>" . $hexHumedadSuelo1 . "<br></br>";
         $bin1 = base_convert($hexHumedadSuelo1, 16, 2);
         $bin1 = str_pad($bin1, 12, '0', STR_PAD_LEFT);
-        //echo "<br></br>" . $bin1 . "<br></br>";
-        //echo "<br></br>" . substr($bin1, 2, 7) . "<br></br>";
         $humedadSuelo1 = bindec(substr($bin1, 2, 7)); // 7 cifras altas
 
 
         $hexHumedadSuelo2 = substr($hex_string, 12, 2);
-        //echo "<br></br>" . $hexHumedadSuelo2 . "<br></br>";
         $bin2 = base_convert($hexHumedadSuelo2, 16, 2);
         $bin2 = str_pad($bin2, 8, '0', STR_PAD_LEFT);
-        //echo "<br></br>" . $bin2 . "<br></br>";
-        //echo "<br></br>" . substr($bin2, 1, 7) . "<br></br>";
         $humedadSuelo2 = bindec(substr($bin2, 1, 7)); // 7 cifras altas
 
         $hexPresion1 = substr($hex_string, 13, 3);
-        //echo "<br></br>" . $hexPresion1 . "<br></br>";
         $bin2 = base_convert($hexPresion1, 16, 2);
         $bin2 = str_pad($bin2, 12, '0', STR_PAD_LEFT);
-        //echo "<br></br>" . $bin2 . "<br></br>";
-        //echo "<br></br>" . substr($bin2, 0, 10) . "<br></br>";
         $presion1 = bindec(substr($bin2, 0, 10)); // 7 cifras altas
 
         $hexPresion2 = substr($hex_string, 15, 3);
-        //echo "<br></br>" . $hexPresion2 . "<br></br>";
         $bin2 = base_convert($hexPresion2, 16, 2);
         $bin2 = str_pad($bin2, 12, '0', STR_PAD_LEFT);
-        //echo "<br></br>" . $bin2 . "<br></br>";
-        //echo "<br></br>" . substr($bin2, 2, 10) . "<br></br>";
         $presion2 = bindec(substr($bin2, 2, 10)); // 7 cifras altas
 
         $str[0] = $temperatura1; 
@@ -90,6 +75,20 @@
         $fecha_formateada = $fecha_objeto->format("Y-m-d\TH:i:s.u\Z");
         $o->created_at = $fecha_formateada;
       }
+// Verificar si la decodificación fue exitosa
+      if ($obj === null && json_last_error() !== JSON_ERROR_NONE) {
+          // Manejar el error si la decodificación falló
+          echo "Error al decodificar el JSON";
+      } else {
+          // Ordenar los elementos por el atributo "seqNumber"
+          usort($obj, function($a, $b) {
+              return $a->seqNumber - $b->seqNumber;
+          });
+          // Crear un nuevo objeto JSON con los datos ordenados
+          $sortedJson = json_encode($obj);
+        $obj = json_decode($sortedJson);
+      }
+
  ?>
 
 <!DOCTYPE html>
