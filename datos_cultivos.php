@@ -36,8 +36,7 @@
         $bin1 = str_pad($bin1, 12, '0', STR_PAD_LEFT);
         $humedadSuelo1 = bindec(substr($bin1, 2, 7)); // 7 cifras altas
 
-
-        $hexHumedadSuelo2 = substr($hex_string, 12, 2);
+        $hexHumedadSuelo2 = substr($hex_string, 11, 2);
         $bin2 = base_convert($hexHumedadSuelo2, 16, 2);
         $bin2 = str_pad($bin2, 8, '0', STR_PAD_LEFT);
         $humedadSuelo2 = bindec(substr($bin2, 1, 7)); // 7 cifras altas
@@ -74,6 +73,7 @@
         // Formatear la nueva fecha en el mismo formato
         $fecha_formateada = $fecha_objeto->format("Y-m-d\TH:i:s.u\Z");
         $o->created_at = $fecha_formateada;
+        
       }
 // Verificar si la decodificación fue exitosa
       if ($obj === null && json_last_error() !== JSON_ERROR_NONE) {
@@ -88,6 +88,7 @@
           $sortedJson = json_encode($obj);
         $obj = json_decode($sortedJson);
       }
+      
 
  ?>
 
