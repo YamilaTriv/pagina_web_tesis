@@ -24,7 +24,9 @@
 		<input type="email" name="email" required>
 
 		<label>Contraseña</label>
-		<input type="text" name="password">
+		<input type="password" name="password" id="myInput" class="b">
+		
+		<input type="checkbox" onclick="myFunction()" class="a"> Ver contraseña
 
 		<button type="submit" name="submit">Inicia sesión</button>
     <div style="text-align: center; justify-content: center;align-items: center; margin-top: 20px; ;display: flex;">
@@ -40,3 +42,13 @@
 
 </body>
 </html>
+<script> 
+	function myFunction() {
+	var x = document.getElementById("myInput");
+	if (x.type === "password") {
+		x.type = "text";
+	} else {
+		x.type = "password";
+	}
+}
+</script>
